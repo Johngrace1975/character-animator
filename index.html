@@ -1,35 +1,11 @@
-index.html
-character.png   (character WITHOUT mouth and WITHOUT eyes)
-mouth.png       (mouth only)
-eye.png         (one open eye)
-      analyser.fftSize = 256;
-      dataArray = new Uint8Array(analyser.frequencyBinCount);
-
-      statusText.textContent = "🎙 Listening... speak now";
-
-      animateMouth();
-    };
-
-    stopBtn.onclick = () => {
-      if (stream) {
-        stream.getTracks().forEach(track => track.stop());
-      }
-      mouth.style.height = "10px";
-      statusText.textContent = "Stopped";
-    };
-
-    function animateMouth() {
-      if (!analyser) return; // stop if analyser is gone
-
-      analyser.getByteFrequencyData(dataArray);
-      let volume = dataArray.reduce((a, b) => a + b) / dataArray.length;
-      let mouthHeight = Math.min(60, volume);
-      mouth.style.height = mouthHeight + "px";
-
-      requestAnimationFrame(animateMouth);
-    }
-  </script>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Character Animator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background:black;color:white;text-align:center;">
+  <h1>✅ GitHub Pages is now loading HTML correctly</h1>
 </body>
 </html>
-
